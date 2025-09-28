@@ -28,6 +28,14 @@ article {
     border: 1px solid #ccc;
     overflow-y: auto;
 }
+article {
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 8px;
+}
 
 aside {
     flex: 1;
@@ -61,4 +69,8 @@ button:hover {
 }
 body.works_on_smartphone main {
     flex-direction: column; 
+}
+.logo {
+    font-size: 24px;
+    margin-right: 10px;
 }
