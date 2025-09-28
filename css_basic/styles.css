@@ -59,3 +59,6 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+body.works_on_smartphone main {
+    flex-direction: column; 
+}
