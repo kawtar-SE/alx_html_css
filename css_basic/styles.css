@@ -1,21 +1,10 @@
+/* Flexbox Layout */
 body {
-    
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
     height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Header & Footer styling */
-header, footer {
-    padding: 20px;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-}
-
-/* Main: row layout (article + aside) */
 main {
     display: flex;
     flex-direction: row;
@@ -24,27 +13,34 @@ main {
 
 article {
     flex: 2;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ccc;
     overflow-y: auto;
-}
-article {
     background-color: #f9f9f9;
-    color: #333;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
     border-radius: 8px;
 }
 
 aside {
     flex: 1;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ccc;
-    overflow-y: auto; /* scrollable */
+    overflow-y: auto;
+    background-color: #e9e9e9;
+    border-radius: 8px;
 }
 
-/* Optional: basic links styling */
+/* Logo styling */
+.logo {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/* Responsive layout */
+body.works_on_smartphone main {
+    flex-direction: column;
+}
+
+/* Links and buttons styling */
 a {
     color: blue;
     text-decoration: none;
@@ -54,7 +50,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Optional: buttons */
 button {
     background-color: #007BFF;
     color: white;
@@ -66,11 +61,4 @@ button {
 
 button:hover {
     background-color: #0056b3;
-}
-body.works_on_smartphone main {
-    flex-direction: column; 
-}
-.logo {
-    font-size: 24px;
-    margin-right: 10px;
 }
