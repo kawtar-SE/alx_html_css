@@ -7,7 +7,7 @@
 
 /* Body */
 body {
-    font-family: 'Inter', sans-serif; /* عدلي حسب Figma */
+    font-family: 'Inter', sans-serif; /* من Figma */
     background-color: #ffffff;
     color: #333333;
 }
@@ -17,26 +17,26 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 80px; /* عدلي حسب Figma */
-    background-color: #f8f9fa; /* عدلي حسب Figma */
-    height: 80px; /* عدلي حسب Figma */
+    padding: 20px 80px;
+    background-color: #f8f9fa;
+    height: 80px;
 }
 
 header .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #000000; /* عدلي حسب Figma */
+    color: #000000;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 30px; /* المسافة بين اللينكات */
+    gap: 30px;
 }
 
 header nav ul li a {
     text-decoration: none;
-    color: #333333; /* عدلي حسب Figma */
+    color: #333333;
     font-weight: 500;
     font-size: 16px;
 }
@@ -47,8 +47,8 @@ header nav ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 500px; /* عدلي حسب Figma */
-    background-image: url('images/hero-bg.png'); /* عدلي حسب الصورة */
+    height: 500px;
+    background-image: url('images/hero-bg.png');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -56,14 +56,14 @@ header nav ul li a {
 }
 
 .hero h1 {
-    font-size: 48px; /* عدلي حسب Figma */
-    color: #111111; /* عدلي حسب Figma */
+    font-size: 48px;
+    color: #111111;
     margin-bottom: 20px;
 }
 
 .hero p {
     font-size: 18px;
-    color: #555555; /* عدلي حسب Figma */
+    color: #555555;
     margin-bottom: 30px;
     max-width: 600px;
 }
@@ -73,7 +73,7 @@ header nav ul li a {
     font-size: 16px;
     border: none;
     border-radius: 6px;
-    background-color: #007bff; /* عدلي حسب Figma */
+    background-color: #007bff;
     color: white;
     cursor: pointer;
     transition: background 0.3s;
@@ -81,4 +81,56 @@ header nav ul li a {
 
 .cta-btn:hover {
     background-color: #0056b3;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px 40px;
+    background-color: #f0f0f0;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+}
+
+.feature img {
+    width: 80px; /* عدلي حسب Figma */
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #111111;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #555555;
+}
+
+/* Footer */
+footer {
+    background-color: #222222;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer .social {
+    margin-top: 10px;
+}
+
+footer .social a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+footer .social a:hover {
+    color: #007bff;
 }
