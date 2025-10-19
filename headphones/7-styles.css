@@ -1,0 +1,447 @@
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("./assets/fonts/source-sans-pro/SourceSansPro-Bold.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("./assets/fonts/source-sans-pro/SourceSansPro-Semibold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("./assets/fonts/source-sans-pro/SourceSansPro-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("./assets/fonts/source-sans-pro/SourceSansPro-Light.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("./assets/fonts/source-sans-pro/SourceSansPro-ExtraLight.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Spin-Cycle-OT";
+    src: url("./assets/fonts/Spin-Cycle-OT/spincycle_ot.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "holberton-school";
+    src: url("./assets/fonts/holberton-school/holberton_school-icon.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "source-sans-pro";
+}
+
+body {
+    min-width: 320px;
+}
+
+header {
+    background-image: url("./assets/images/headphones_hero_1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.navbar {
+    --middle-line-width: 15px;
+    --other-lines-width: 35px;
+    --rotation: 0deg;
+    --animation-speed: 0.3s;
+    --top-pad: 0px;
+    --show-menu: none;
+
+    padding-top: 0px;
+    min-height: 100px;
+    height: min-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--test);
+}
+
+.hamburger-menu {
+    width: 35px;
+    height: 35px;
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    transform: scale(0.7);
+    cursor: pointer;
+}
+
+.hamburger-menu .lines,
+.hamburger-menu .lines::before,
+.hamburger-menu .lines::after {
+    content: "";
+    height: 4px;
+    border-radius: 10px;
+    position: absolute;
+    transition: width var(--animation-speed) ease-in-out, transform var(--animation-speed) ease-in-out;
+    background-color: white;
+}
+
+.hamburger-menu .lines {
+    width: var(--middle-line-width);
+    top: 17.5px;
+}
+
+.hamburger-menu .lines::before,
+.hamburger-menu .lines::after {
+    width: var(--other-lines-width);
+    transform-origin: left center;
+}
+
+.hamburger-menu .lines::before {
+    top: -12px;
+    transform: rotate(var(--rotation));
+}
+
+.hamburger-menu .lines::after {
+    top: 12px;
+    transform: rotate(calc(-1 * var(--rotation)));
+}
+
+.hamburger-menu input {
+    appearance: none;
+}
+
+.navbar:has(input:checked) {
+    --middle-line-width: 0px;
+    --other-lines-width: 33.94px;
+    --rotation: 45deg;
+    --show-menu: flex;
+    --top-pad: 32px;
+}
+
+
+.navbar .logo,
+footer .container .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo span {
+    font-family: "Spin-Cycle-OT";
+    color: white;
+    padding-top: 5px;
+}
+
+.navbar .buttons {
+    display: var(--show-menu);
+    gap: 10px;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    color: rgb(255, 95, 95);
+}
+
+.call-to-action {
+    height: calc(100svh - 100px);
+    min-height: min-content;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    text-align: center;
+    color: white;
+}
+
+.call-to-action .headers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headers h1 {
+    margin: 0px 20px;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 0.3rem + 4.8vw, 3rem);
+}
+
+.headers h3 {
+    margin: 0px 30px;
+    font-size: 1.0rem;
+}
+
+.call-to-action button, 
+.contact-us .form-group button {
+    background-color: rgb(255, 95, 95);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.call-to-action button {
+    padding: 20px 40px;
+    box-shadow: 0px 0px 40px -10px black;
+}
+
+.call-to-action button:hover,
+.contact-us .form-group button:hover {
+    background-color: rgb(255, 80, 80);
+}
+
+.call-to-action p {
+    max-width: 800px;
+    margin: 0px 20px;
+}
+
+.what-we-do, 
+.our-results {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+}
+
+.what-we-do h1, 
+.our-results h1 {
+    font-weight: 600;
+}
+
+.what-we-do p, .our-results p {
+    max-width: 800px;
+}
+
+.what-we-do .container, 
+.our-results .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.what-we-do .container .item {
+    max-width: 200px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.what-we-do .container h3 {
+    font-weight: 600;
+}
+
+.what-we-do .item span {
+    font-family: "holberton-school";
+    font-size: 5.2rem;
+    color: rgb(255, 95, 95);
+    pointer-events: none;
+}
+
+.our-results {
+    color: white;
+    background-image: url("./assets/images/headphones_hero_2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.our-results .container {
+    padding-top: 60px;
+    gap: 90px;
+}
+
+.our-results .container .item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.our-results .container .item h2 {
+    font-size: 2.2rem;
+}
+
+.our-results .container .item span {
+    font-size: 0.8rem;
+}
+
+.our-results .container .item .pentagon {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: -45px;
+    left: -20px;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    z-index: -1;
+    background-color: rgb(255, 95, 95);
+}
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-us h1 {
+    padding: 80px 0px 40px 0px;
+    font-weight: 600;
+}
+
+.contact-us .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.contact-us .form-group .group {
+    width: 280px;
+    position: relative;
+}
+
+.contact-us .form-group .group textarea {
+    resize: vertical;
+    min-height: 35px;
+    padding-top: 10px;
+}
+
+.contact-us .form-group .group input,
+.contact-us .form-group .group textarea {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-bottom: 2px solid grey;
+    outline: none;
+}
+
+.contact-us .form-group .group input:valid ~ label,
+.contact-us .form-group .group input:focus ~ label,
+.contact-us .form-group .group textarea:valid ~ label,
+.contact-us .form-group .group textarea:focus ~ label {
+    top: -18px;
+}
+
+.contact-us .form-group .group label {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    font-weight: 600;
+    pointer-events: none;
+    transition: top 0.1s ease-in-out;
+}
+
+.contact-us .form-group button {
+    padding: 15px 30px;
+}
+
+footer {
+    padding: 80px 0px 0px 0px;
+    background-color: rgb(9, 21, 43);
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+footer .container .icons {
+    display: flex;
+    gap: 18px;
+}
+
+footer .copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    color: grey;
+}
+
+footer .copy .icons-credit{
+    font-size: 0.8rem;
+}
+
+footer .copy .icons-credit a {
+    color: white;
+}
+
+.what-we-do .container .item:hover,
+.our-results .container .item:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding-top: var(--top-pad);
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar .buttons {
+        gap: 20px;
+        display: var(--show-menu);
+        flex-direction: column;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    footer .container {
+        flex-direction: column;
+    }
+
+}
+
+@media (min-width: 480px) {
+    .navbar {
+        flex-direction: row;
+    }
+
+    .navbar .buttons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+}

@@ -1,0 +1,245 @@
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("./assets/fonts/source-sans-pro/SourceSansPro-Bold.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("./assets/fonts/source-sans-pro/SourceSansPro-Semibold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("./assets/fonts/source-sans-pro/SourceSansPro-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("./assets/fonts/source-sans-pro/SourceSansPro-Light.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("./assets/fonts/source-sans-pro/SourceSansPro-ExtraLight.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Spin-Cycle-OT";
+    src: url("./assets/fonts/Spin-Cycle-OT/spincycle_ot.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "source-sans-pro";
+}
+
+body {
+    min-width: 320px;
+}
+
+header {
+    background-image: url("./assets/images/headphones_hero_1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.navbar {
+    --middle-line-width: 15px;
+    --other-lines-width: 35px;
+    --rotation: 0deg;
+    --animation-speed: 0.3s;
+    --top-pad: 0px;
+    --show-menu: none;
+
+    padding-top: 0px;
+    min-height: 100px;
+    height: min-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--test);
+}
+
+.hamburger-menu {
+    width: 35px;
+    height: 35px;
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    transform: scale(0.7);
+    cursor: pointer;
+}
+
+.hamburger-menu .lines,
+.hamburger-menu .lines::before,
+.hamburger-menu .lines::after {
+    content: "";
+    height: 4px;
+    border-radius: 10px;
+    position: absolute;
+    transition: width var(--animation-speed) ease-in-out, transform var(--animation-speed) ease-in-out;
+    background-color: white;
+}
+
+.hamburger-menu .lines {
+    width: var(--middle-line-width);
+    top: 17.5px;
+}
+
+.hamburger-menu .lines::before,
+.hamburger-menu .lines::after {
+    width: var(--other-lines-width);
+    transform-origin: left center;
+}
+
+.hamburger-menu .lines::before {
+    top: -12px;
+    transform: rotate(var(--rotation));
+}
+
+.hamburger-menu .lines::after {
+    top: 12px;
+    transform: rotate(calc(-1 * var(--rotation)));
+}
+
+.hamburger-menu input {
+    appearance: none;
+}
+
+.navbar:has(input:checked) {
+    --middle-line-width: 0px;
+    --other-lines-width: 33.94px;
+    --rotation: 45deg;
+    --show-menu: flex;
+    --top-pad: 32px;
+}
+
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo span {
+    font-family: "Spin-Cycle-OT";
+    color: white;
+    padding-top: 5px;
+}
+
+.navbar .buttons {
+    display: var(--show-menu);
+    gap: 10px;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    color: rgb(255, 95, 95);
+}
+
+.call-to-action {
+    height: calc(100svh - 100px);
+    min-height: min-content;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    text-align: center;
+    color: white;
+}
+
+.call-to-action .headers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headers h1 {
+    margin: 0px 20px;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 0.3rem + 4.8vw, 3rem);
+}
+
+.headers h3 {
+    margin: 0px 30px;
+    font-size: 1.0rem;
+}
+
+.call-to-action button {
+    background-color: rgb(255, 95, 95);
+    border: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0px 0px 40px -10px black;
+    cursor: pointer;
+}
+
+.call-to-action button:hover {
+    background-color: rgb(255, 80, 80);
+}
+
+.call-to-action p {
+    max-width: 800px;
+    margin: 0px 20px;
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding-top: var(--top-pad);
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar .buttons {
+        gap: 20px;
+        display: var(--show-menu);
+        flex-direction: column;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+@media (min-width: 480px) {
+    .navbar {
+        flex-direction: row;
+    }
+
+    .navbar .buttons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+}
